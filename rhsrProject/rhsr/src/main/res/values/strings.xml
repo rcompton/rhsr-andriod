@@ -7,5 +7,6 @@
     <string name="photo_button">Photo Report</string>
     <string name="title_activity_photo_report_button">PhotoReportButtonActivityTitle</string>
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_tweet_to_twitter">TweetToTwitterActivity</string>
 
 </resources>
