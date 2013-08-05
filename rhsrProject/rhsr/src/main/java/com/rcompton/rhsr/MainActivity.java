@@ -24,7 +24,9 @@ public class MainActivity extends Activity {
 
     /** Called when the user clicks the Photo Report button */
     public final static String SUBMITTED_REPORT_MESSAGE = "com.rcompton.rhsr.SUBMITTED_REPORT_MESSAGE";
+    private final static int TAKE_PHOTO_CODE = 123456;
     public void photoReportButton(View view) {
+
         Intent intent = new Intent(this, PhotoReportButtonActivity.class);
         EditText editText = (EditText) findViewById(R.id.submitted_report);
         String submittedReport = editText.getText().toString();

@@ -6,11 +6,13 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <!-- From: file:/home/ryan/Dropbox/rhsr/rhsr-andriod/rhsrProject/rhsr/src/main/res/values/strings.xml -->
     <string name="action_settings">Settings</string>
+    <string name="album_name">rhsrPhotos</string>
     <string name="app_name">Rush Hour Surf Report</string>
     <string name="hello_world">Hello world!</string>
     <string name="hows_it_look">Hows it look now?</string>
     <string name="photo_button">Photo Report</string>
     <string name="title_activity_photo_report_button">PhotoReportButtonActivityTitle</string>
+    <string name="title_activity_take_and_save_photo">TakeAndSavePhotoActivity</string>
     <string name="title_activity_tweet_to_twitter">TweetToTwitterActivity</string>
     <!-- From: file:/home/ryan/Dropbox/rhsr/rhsr-andriod/rhsrProject/rhsr/src/main/res/values/styles.xml -->
     <style name="AppBaseTheme" parent="android:Theme">

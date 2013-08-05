@@ -28,22 +28,26 @@ public final class R {
     public static final class layout {
         public static final int activity_main=0x7f030000;
         public static final int photo_report_button_activity=0x7f030001;
+        public static final int take_and_save_photo_activity=0x7f030002;
     }
     public static final class menu {
         public static final int main=0x7f070000;
         public static final int photo_report_button=0x7f070001;
-        public static final int tweet_to_twitter=0x7f070002;
+        public static final int take_and_save_photo=0x7f070002;
+        public static final int tweet_to_twitter=0x7f070003;
     }
     public static final class string {
         /**  From: file:/home/ryan/Dropbox/rhsr/rhsr-andriod/rhsrProject/rhsr/src/main/res/values/strings.xml 
          */
         public static final int action_settings=0x7f050000;
-        public static final int app_name=0x7f050001;
-        public static final int hello_world=0x7f050002;
-        public static final int hows_it_look=0x7f050003;
-        public static final int photo_button=0x7f050004;
-        public static final int title_activity_photo_report_button=0x7f050005;
-        public static final int title_activity_tweet_to_twitter=0x7f050006;
+        public static final int album_name=0x7f050001;
+        public static final int app_name=0x7f050002;
+        public static final int hello_world=0x7f050003;
+        public static final int hows_it_look=0x7f050004;
+        public static final int photo_button=0x7f050005;
+        public static final int title_activity_photo_report_button=0x7f050006;
+        public static final int title_activity_take_and_save_photo=0x7f050007;
+        public static final int title_activity_tweet_to_twitter=0x7f050008;
     }
     public static final class style {
         /**  From: file:/home/ryan/Dropbox/rhsr/rhsr-andriod/rhsrProject/rhsr/src/main/res/values/styles.xml 

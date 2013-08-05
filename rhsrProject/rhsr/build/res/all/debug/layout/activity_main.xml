@@ -25,5 +25,6 @@
             android:layout_alignParentBottom="true"
             android:layout_alignRight="@+id/submitted_report"/>
 
+
 </RelativeLayout>
 <!-- From: file:/home/ryan/Dropbox/rhsr/rhsr-andriod/rhsrProject/rhsr/src/main/res/layout/activity_main.xml -->

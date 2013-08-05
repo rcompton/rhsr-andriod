@@ -35,6 +35,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="MainActivity" />
         </activity>
+        <activity
+            android:name="com.rcompton.rhsr.TakeAndSavePhotoActivity"
+            android:label="@string/title_activity_take_and_save_photo"
+            android:parentActivityName="PhotoReportButtonActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="PhotoReportButtonActivity" />
+        </activity>
     </application>
 
 </manifest>
