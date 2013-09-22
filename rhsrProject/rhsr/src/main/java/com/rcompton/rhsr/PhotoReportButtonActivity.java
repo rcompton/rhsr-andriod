@@ -1,6 +1,7 @@
 package com.rcompton.rhsr;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
@@ -13,18 +14,13 @@ import android.view.MenuItem;
 import android.support.v4.app.NavUtils;
 import android.annotation.TargetApi;
 import android.os.Build;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.InputStreamReader;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
-import java.net.URL;
-import java.net.URLConnection;
-import java.util.Arrays;
 import java.util.UUID;
 
 import twitter4j.Status;
@@ -36,31 +32,63 @@ import twitter4j.auth.AccessToken;
 
 public class PhotoReportButtonActivity extends Activity {
 
-    private final static String PBUTTON_LOG_TAG="rhsrPhotoButton";
+    private final static String  RHSR_PHOTO_BUTTON ="rhsrPhotoButton";
     private final static int CAMERA_REQ_CODE = 123456;
 
-    String tweetText = "default text "+UUID.randomUUID().toString();
+    private Uri imageUri;
+    private Bitmap photoBitMap;
 
-    String tweetLink = "twitter.com";
+    String tweetText;
+
+    //String tweetLink = "twitter.com";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        Intent mainIntent = getIntent();
-        tweetText = mainIntent.getStringExtra(MainActivity.SUBMITTED_REPORT_MESSAGE);
+        setContentView(R.layout.photo_report_button_activity);
+        setupActionBar();
 
         //start camera and take photo
+        //leaves you in onActivityResult
+        // waits in onPause()
         capturePhoto();
+    }
 
-        TextView textView = new TextView(this);
-        textView.setTextSize(20);
-        textView.setText(tweetLink);
-        setContentView(textView);
+    @Override
+    protected void onStart(){
+        super.onStart();
+        Log.i(RHSR_PHOTO_BUTTON, "start");
 
-        setContentView(R.layout.photo_report_button_activity);
-        //Show the Up button in the action bar.
-        setupActionBar();
+        //get the text from the main intent
+        Intent mainIntent = getIntent();
+        tweetText = mainIntent.getStringExtra(MainActivity.SUBMITTED_REPORT_MESSAGE);
+    }
+
+    boolean isFirstResume = true;
+    @Override
+    public void onResume(){
+        super.onResume();
+        if(isFirstResume){
+            Log.i(RHSR_PHOTO_BUTTON, "1st resume");
+            isFirstResume = false;
+            return;
+        }
+        Log.i(RHSR_PHOTO_BUTTON, "not 1st resume");
+
+        //display report
+        TextView report = (TextView)findViewById(R.id.textViewPhotoActivity);
+        report.setText(tweetText);
+
+        //display photo
+        Log.i(RHSR_PHOTO_BUTTON,imageUri.getPath());
+        ImageView showPhoto = (ImageView)findViewById(R.id.imageViewPhotoActivity);
+        showPhoto.setImageBitmap(photoBitMap);
+    }
+
+    @Override
+    public void onPause(){
+        super.onPause();
+        Log.i(RHSR_PHOTO_BUTTON, "paused");
     }
 
     /**
@@ -79,7 +107,6 @@ public class PhotoReportButtonActivity extends Activity {
         getMenuInflater().inflate(R.menu.photo_report_button, menu);
         return true;
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -130,26 +157,25 @@ public class PhotoReportButtonActivity extends Activity {
             statusUpdate = new StatusUpdate(tweetText);
             statusUpdate.setMedia(new File(anImageUri.getPath()));
             Status status = twitter.updateStatus(statusUpdate);
-            Log.i(PBUTTON_LOG_TAG, "success! "+status.getText());
-            tweetLink = "https://twitter.com/"+status.getId()+
-                        "/status/"+ status.getId();
+            Log.i(RHSR_PHOTO_BUTTON, "success! "+status.getText());
+            //tweetLink = "https://twitter.com/"+status.getId()+
+             //           "/status/"+ status.getId();
             return true;
         }catch(Exception e){
             StringWriter sw = new StringWriter();
             PrintWriter pw = new PrintWriter(sw);
             e.printStackTrace(pw);
-            Log.e(PBUTTON_LOG_TAG, sw.toString());
+            Log.e(RHSR_PHOTO_BUTTON, sw.toString());
         }
         return false;
     }
 
     //start camera
-    Uri imageUri;
     public void capturePhoto() {
         Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
-        File photoFile = new File(Environment.getExternalStorageDirectory(),  "rhsrPhoto"+UUID.randomUUID().toString()+".png");
-        intent.putExtra(MediaStore.EXTRA_OUTPUT,
-                Uri.fromFile(photoFile));
+        File photoFile = new File(Environment.getExternalStorageDirectory(),
+                                   "rhsrPhoto"+UUID.randomUUID().toString()+".png");
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(photoFile));
         imageUri = Uri.fromFile(photoFile);
         startActivityForResult(intent, CAMERA_REQ_CODE);
     }
@@ -157,20 +183,63 @@ public class PhotoReportButtonActivity extends Activity {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
         switch (requestCode) {
             case CAMERA_REQ_CODE:
                 if (resultCode == Activity.RESULT_OK) {
-                    Uri selectedImageUri = imageUri;
-                    boolean tweetSuccess = sendTweetToRyansAccount(tweetText,selectedImageUri);
-                    if(tweetSuccess){
-                        Log.i(PBUTTON_LOG_TAG, "tweet with photo success!!!!!!!");
+                    Log.i(RHSR_PHOTO_BUTTON,"photo win!");
+                    try {
+                        photoBitMap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), imageUri);
+                    } catch (IOException e) {
+                        Log.i(RHSR_PHOTO_BUTTON, "get photo bitmap fail");
+
                     }
+
+                    //Bitmap smallImage = (Bitmap) data.getExtras().get("data");
+                    //this.imageView.setImageBitmap(smallImage);
+                    //Toast.makeText(getApplicationContext(),"ok"+imageUri.toString(),Toast.LENGTH_SHORT);
+                    //Uri selectedImageUri = imageUri;
+                    //boolean tweetSuccess = sendTweetToRyansAccount(tweetText,selectedImageUri);
+                    //if(tweetSuccess){
+                    //    Log.i(PBUTTON_LOG_TAG, "tweet with photo success!!!!!!!");
+                    //}
                 }else{
-                    imageUri = Uri.parse("fuck.");
+                    Log.i(RHSR_PHOTO_BUTTON,"photo fail!");
                 }
+                return;
         }
     }
+
+
+   // private boolean resumeHasRun = false;
+
+
+//        if (!resumeHasRun) {
+//            resumeHasRun = true;
+//            return;
+//        }
+
+//        Log.i(PBUTTON_LOG_TAG,"onResume");
+        //this.imageView = (ImageView)this.findViewById(R.id.imageView0);
+
+//        Intent mainIntent = getIntent();
+//        tweetText = mainIntent.getStringExtra(MainActivity.SUBMITTED_REPORT_MESSAGE);
+//        TextView textView = new TextView(this);
+//        textView.setTextSize(20);
+//        textView.setText(tweetText);
+//        setContentView(textView);
+
+       // ImageView image = (ImageView) findViewById(R.id.imageView1);
+        //this.imageView = (ImageView)this.findViewById(R.id.imageView0);
+
+        //imageView.setImageURI(imageUri);
+        //imageView.getLayoutParams().height = 20;
+        //setContentView(imageView);
+
+
+ //       Log.i(PBUTTON_LOG_TAG,"photo report text set.");
+
+
+   // }
 
 }
 

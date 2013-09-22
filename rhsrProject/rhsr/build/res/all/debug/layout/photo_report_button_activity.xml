@@ -9,5 +9,25 @@
     tools:context=".PhotoReportButtonActivity">
 
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="your report"
+        android:id="@+id/textViewPhotoActivity"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageViewPhotoActivity"
+        android:layout_below="@+id/textViewPhotoActivity"
+        android:layout_alignLeft="@+id/textViewPhotoActivity"
+        android:layout_marginTop="25dp"
+        android:scaleType="centerInside"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true" />
+
+
 </RelativeLayout>
 <!-- From: file:/home/ryan/Dropbox/rhsr/rhsr-andriod/rhsrProject/rhsr/src/main/res/layout/photo_report_button_activity.xml -->

@@ -8,6 +8,7 @@
     <string name="action_settings">Settings</string>
     <string name="album_name">rhsrPhotos</string>
     <string name="app_name">Rush Hour Surf Report</string>
+    <string name="foundSpotDefault">not sure about closest spot</string>
     <string name="hello_world">Hello world!</string>
     <string name="hows_it_look">Hows it look now?</string>
     <string name="photo_button">Photo Report</string>

@@ -1,0 +1,20 @@
+# incremental data. DO NOT EDIT.
+# format is <lastModified> <length> <SHA-1> <path>
+# Encoding is UTF-8
+1379814511000 727 9b541438332e463b1510ca7aa7171c3ae49be504 /home/ryan/Dropbox/rhsr/rhsr-andriod/rhsrProject/rhsr/src/main/res/values/strings.xml
+1375574651000 181 84de2797380184d8b39af6f829afb092fb956173 /home/ryan/Dropbox/rhsr/rhsr-andriod/rhsrProject/rhsr/src/main/res/values-sw600dp/dimens.xml
+1375580918000 244 045ff451db7cd8e61285502b8c9bbf7405f2078d /home/ryan/Dropbox/rhsr/rhsr-andriod/rhsrProject/rhsr/src/main/res/menu/tweet_to_twitter.xml
+1375574651000 254 25b6404e44acb50c82590049639d4fb5fefbac8e /home/ryan/Dropbox/rhsr/rhsr-andriod/rhsrProject/rhsr/src/main/res/values-sw720dp-land/dimens.xml
+1375574651000 318 f37b4c43b290eba4a42d9102f14a550c301de5c8 /home/ryan/Dropbox/rhsr/rhsr-andriod/rhsrProject/rhsr/src/main/res/values-v11/styles.xml
+1379312427000 1248 d634a148805642f7f64f376db0f516f8fccb8336 /home/ryan/Dropbox/rhsr/rhsr-andriod/rhsrProject/rhsr/src/main/res/layout/photo_report_button_activity.xml
+1375574651000 674 c78f92856947cb5742edaa3b94df76b0823dbbe7 /home/ryan/Dropbox/rhsr/rhsr-andriod/rhsrProject/rhsr/src/main/res/values/styles.xml
+1375574651000 211 4e1904afba59d31e5cd6133f6a4c360fa9a5913f /home/ryan/Dropbox/rhsr/rhsr-andriod/rhsrProject/rhsr/src/main/res/values/dimens.xml
+1375669042000 275 e641bb30bec7077e7ede847a45957c57cc526a32 /home/ryan/Dropbox/rhsr/rhsr-andriod/rhsrProject/rhsr/src/main/res/menu/photo_report_button.xml
+1375662249000 244 045ff451db7cd8e61285502b8c9bbf7405f2078d /home/ryan/Dropbox/rhsr/rhsr-andriod/rhsrProject/rhsr/src/main/res/menu/take_and_save_photo.xml
+1375662249000 661 90a2410d2040d28698758f41568933af7caf41dc /home/ryan/Dropbox/rhsr/rhsr-andriod/rhsrProject/rhsr/src/main/res/layout/take_and_save_photo_activity.xml
+1375574650000 24654 696bbbc63d2250ef7d3373f2d602e604acd13d8c /home/ryan/Dropbox/rhsr/rhsr-andriod/rhsrProject/rhsr/src/main/res/drawable-xxhdpi/ic_launcher.png
+1375574650000 7721 39b0f5a0570da92f471225402ad0ea6de30bf2be /home/ryan/Dropbox/rhsr/rhsr-andriod/rhsrProject/rhsr/src/main/res/drawable-hdpi/ic_launcher.png
+1375574650000 3769 eec07752d40e268ed7f4a1730acc77ab1e40aeb0 /home/ryan/Dropbox/rhsr/rhsr-andriod/rhsrProject/rhsr/src/main/res/drawable-mdpi/ic_launcher.png
+1379814511000 1600 933138265dbeaed849060c0ff94f2fd47383630e /home/ryan/Dropbox/rhsr/rhsr-andriod/rhsrProject/rhsr/src/main/res/layout/activity_main.xml
+1375574650000 12329 a8301606e15d4b6dccdd775cc273cfc51a552645 /home/ryan/Dropbox/rhsr/rhsr-andriod/rhsrProject/rhsr/src/main/res/drawable-xhdpi/ic_launcher.png
+1375574651000 244 045ff451db7cd8e61285502b8c9bbf7405f2078d /home/ryan/Dropbox/rhsr/rhsr-andriod/rhsrProject/rhsr/src/main/res/menu/main.xml

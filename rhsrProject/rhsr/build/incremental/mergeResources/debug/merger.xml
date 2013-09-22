@@ -14,6 +14,11 @@
                 qualifiers=""
                 type="layout" />
             <file
+                name="take_and_save_photo_activity"
+                path="/home/ryan/Dropbox/rhsr/rhsr-andriod/rhsrProject/rhsr/src/main/res/layout/take_and_save_photo_activity.xml"
+                qualifiers=""
+                type="layout" />
+            <file
                 path="/home/ryan/Dropbox/rhsr/rhsr-andriod/rhsrProject/rhsr/src/main/res/values/styles.xml"
                 qualifiers="" >
 
@@ -50,19 +55,21 @@
                 </string>
                 <string name="title_activity_tweet_to_twitter" >TweetToTwitterActivity
                 </string>
-                <string name="hows_it_look" >Hows it look now?
-                </string>
                 <string name="app_name" >Rush Hour Surf Report
+                </string>
+                <string name="hows_it_look" >Hows it look now?
                 </string>
                 <string name="title_activity_photo_report_button" >PhotoReportButtonActivityTitle
                 </string>
                 <string name="hello_world" >Hello world!
                 </string>
-                <string name="album_name" >rhsrPhotos
-                </string>
                 <string name="title_activity_take_and_save_photo" >TakeAndSavePhotoActivity
                 </string>
+                <string name="album_name" >rhsrPhotos
+                </string>
                 <string name="photo_button" >Photo Report
+                </string>
+                <string name="foundSpotDefault" >not sure about closest spot
                 </string>
             </file>
             <file
@@ -78,6 +85,11 @@
             <file
                 name="tweet_to_twitter"
                 path="/home/ryan/Dropbox/rhsr/rhsr-andriod/rhsrProject/rhsr/src/main/res/menu/tweet_to_twitter.xml"
+                qualifiers=""
+                type="menu" />
+            <file
+                name="take_and_save_photo"
+                path="/home/ryan/Dropbox/rhsr/rhsr-andriod/rhsrProject/rhsr/src/main/res/menu/take_and_save_photo.xml"
                 qualifiers=""
                 type="menu" />
             <file
@@ -117,16 +129,6 @@
                 path="/home/ryan/Dropbox/rhsr/rhsr-andriod/rhsrProject/rhsr/src/main/res/drawable-mdpi/ic_launcher.png"
                 qualifiers="mdpi"
                 type="drawable" />
-            <file
-                name="take_and_save_photo"
-                path="/home/ryan/Dropbox/rhsr/rhsr-andriod/rhsrProject/rhsr/src/main/res/menu/take_and_save_photo.xml"
-                qualifiers=""
-                type="menu" />
-            <file
-                name="take_and_save_photo_activity"
-                path="/home/ryan/Dropbox/rhsr/rhsr-andriod/rhsrProject/rhsr/src/main/res/layout/take_and_save_photo_activity.xml"
-                qualifiers=""
-                type="layout" />
         </source>
         <source path="/home/ryan/Dropbox/rhsr/rhsr-andriod/rhsrProject/rhsr/build/res/rs/debug" />
     </dataSet>
